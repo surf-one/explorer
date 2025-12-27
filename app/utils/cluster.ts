@@ -6,24 +6,15 @@ export enum ClusterStatus {
 
 export enum Cluster {
     MainnetBeta,
-    Testnet,
-    Devnet,
-    Simd296,
     Custom,
 }
 
-export const CLUSTERS = [Cluster.MainnetBeta, Cluster.Testnet, Cluster.Devnet, Cluster.Simd296, Cluster.Custom];
+export const CLUSTERS = [Cluster.MainnetBeta, Cluster.Custom];
 
 export function clusterSlug(cluster: Cluster): string {
     switch (cluster) {
         case Cluster.MainnetBeta:
             return 'mainnet-beta';
-        case Cluster.Testnet:
-            return 'testnet';
-        case Cluster.Devnet:
-            return 'devnet';
-        case Cluster.Simd296:
-            return 'simd296';
         case Cluster.Custom:
             return 'custom';
     }
@@ -33,21 +24,15 @@ export function clusterName(cluster: Cluster): string {
     switch (cluster) {
         case Cluster.MainnetBeta:
             return 'Mainnet Beta';
-        case Cluster.Testnet:
-            return 'Testnet';
-        case Cluster.Devnet:
-            return 'Devnet';
-        case Cluster.Simd296:
-            return 'SIMD-296';
         case Cluster.Custom:
             return 'Custom';
     }
 }
 
 export const MAINNET_BETA_URL = 'https://p9tlgq6n.turboflow.xyz/svm';
-export const TESTNET_URL = 'https://p9tlgq6n.turboflow.xyz/svm';
-export const DEVNET_URL = 'https://p9tlgq6n.turboflow.xyz/svm';
-export const SIMD296_URL = 'https://simd-0296.surfnet.dev:8899';
+//export const TESTNET_URL = 'https://p9tlgq6n.turboflow.xyz/svm';
+//export const DEVNET_URL = 'https://p9tlgq6n.turboflow.xyz/svm';
+//export const SIMD296_URL = 'https://simd-0296.surfnet.dev:8899';
 
 const modifyUrl = (url: string): string => {
     if (typeof window !== 'undefined' && window.location.hostname === 'localhost') {
@@ -59,14 +44,8 @@ const modifyUrl = (url: string): string => {
 
 export function clusterUrl(cluster: Cluster, customUrl: string): string {
     switch (cluster) {
-        case Cluster.Devnet:
-            return process.env.NEXT_PUBLIC_DEVNET_RPC_URL ?? modifyUrl(DEVNET_URL);
         case Cluster.MainnetBeta:
             return process.env.NEXT_PUBLIC_MAINNET_RPC_URL ?? modifyUrl(MAINNET_BETA_URL);
-        case Cluster.Testnet:
-            return process.env.NEXT_PUBLIC_TESTNET_RPC_URL ?? modifyUrl(TESTNET_URL);
-        case Cluster.Simd296:
-            return process.env.NEXT_PUBLIC_SIMD296_RPC_URL ?? SIMD296_URL;
         case Cluster.Custom:
             return customUrl;
     }
@@ -74,14 +53,8 @@ export function clusterUrl(cluster: Cluster, customUrl: string): string {
 
 export function serverClusterUrl(cluster: Cluster, customUrl: string): string {
     switch (cluster) {
-        case Cluster.Devnet:
-            return process.env.DEVNET_RPC_URL ?? modifyUrl(DEVNET_URL);
         case Cluster.MainnetBeta:
             return process.env.MAINNET_RPC_URL ?? modifyUrl(MAINNET_BETA_URL);
-        case Cluster.Testnet:
-            return process.env.TESTNET_RPC_URL ?? modifyUrl(TESTNET_URL);
-        case Cluster.Simd296:
-            return process.env.SIMD296_RPC_URL ?? SIMD296_URL;
         case Cluster.Custom:
             return customUrl;
     }
