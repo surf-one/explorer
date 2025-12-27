@@ -209,7 +209,7 @@ function TpsBarChart({ performanceInfo, series, setSeries }: TpsBarChartProps) {
                     <Bar data={chartData} options={chartOptions} style={{ height: '100%' }} />
                 </div>
 
-                <div className="text-center text-muted mt-3">
+                <div className="text-center text-muted mt-3" style={{ display: 'none' }}>
                     <p className="mb-0">
                         For transaction confirmation time statistics, please visit{' '}
                         <a href="https://www.validators.app" target="_blank" rel="noopener noreferrer">
