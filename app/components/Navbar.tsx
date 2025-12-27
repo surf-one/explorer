@@ -41,7 +41,7 @@ export function Navbar({ children }: INavbarProps) {
                     {children}
                 </div>
 
-                <div className={`collapse navbar-collapse ms-auto ${navOpened ? 'show' : ''} flex-shrink-0`}>
+                {/*<div className={`collapse navbar-collapse ms-auto ${navOpened ? 'show' : ''} flex-shrink-0`}>
                     <ul className="navbar-nav me-auto">
                         <li className="nav-item">
                             <Link
@@ -98,7 +98,7 @@ export function Navbar({ children }: INavbarProps) {
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div>*/}
 
                 <div className="d-none d-lg-block flex-shrink-0 ms-1">
                     <ClusterStatusButton />
