@@ -3,7 +3,6 @@ import './scss/theme-dark.scss';
 import { ClusterModal } from '@components/ClusterModal';
 import { ClusterStatusButton } from '@components/ClusterStatusButton';
 import { MessageBanner } from '@components/MessageBanner';
-//import { port { port { '@components/Navbar';
 import { ClusterProvider } from '@providers/cluster';
 import { ScrollAnchorProvider } from '@providers/scroll-anchor';
 import { Toaster } from '@shared/ui/sonner/toaster';
@@ -11,6 +10,7 @@ import type { Viewport } from 'next';
 import dynamic from 'next/dynamic';
 import { Rubik } from 'next/font/google';
 import { Metadata } from 'next/types';
+import { Navbar } from './components/Navbar';
 const SearchBar = dynamic(() => import('@components/SearchBar'), {
     ssr: false,
 });
@@ -53,7 +53,9 @@ export default function RootLayout({
                     <ClusterProvider>
                         <ClusterModal />
                         <div className="main-content pb-4">
-                            <SearchBar />
+                            <Navbar>
+                                <SearchBar />
+                            </Navbar>
                             <MessageBanner />
                             <div className="container my-3 d-lg-none">
                                 <SearchBar />
