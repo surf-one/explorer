@@ -52,15 +52,7 @@ export function UpcomingFeatures() {
     return (
         <FeaturesTable
             header={
-                <div className="d-flex justify-content-between align-items-center">
-                    <div>
-                        <span className="me-2">🚀</span>
-                        Upcoming {clusterName(cluster)} Features
-                    </div>
-
-                    <Link href={featureGatesPath} className="epoch-link mb-1">
-                        View all feature gates
-                    </Link>
+                <div>
                 </div>
             }
             features={filteredFeatures.filter(feature => !feature.mainnet_activation_epoch)}
