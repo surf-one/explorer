@@ -50,14 +50,7 @@ export function UpcomingFeatures() {
     }
 
     return (
-        <FeaturesTable
-            header={
-                <div>
-                </div>
-            }
-            features={filteredFeatures.filter(feature => !feature.mainnet_activation_epoch)}
-            cluster={cluster}
-        />
+      null
     );
 }
 
