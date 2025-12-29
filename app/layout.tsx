@@ -53,9 +53,7 @@ export default function RootLayout({
                     <ClusterProvider>
                         <ClusterModal />
                         <div className="main-content pb-4">
-                           <Navbar>
-                                <SearchBar />
-                            </Navbar>
+                            <SearchBar />
                             <MessageBanner />
                             <div className="container my-3 d-lg-none">
                                 <SearchBar />
