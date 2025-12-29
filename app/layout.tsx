@@ -3,7 +3,7 @@ import './scss/theme-dark.scss';
 import { ClusterModal } from '@components/ClusterModal';
 import { ClusterStatusButton } from '@components/ClusterStatusButton';
 import { MessageBanner } from '@components/MessageBanner';
-import { Navbar } from '@components/Navbar';
+//import { port { port { '@components/Navbar';
 import { ClusterProvider } from '@providers/cluster';
 import { ScrollAnchorProvider } from '@providers/scroll-anchor';
 import { Toaster } from '@shared/ui/sonner/toaster';
@@ -53,9 +53,6 @@ export default function RootLayout({
                     <ClusterProvider>
                         <ClusterModal />
                         <div className="main-content pb-4">
-                             <Navbar>
-                                <SearchBar />
-                            </Navbar>
                             <MessageBanner />
                             <div className="container my-3 d-lg-none">
                                 <SearchBar />
