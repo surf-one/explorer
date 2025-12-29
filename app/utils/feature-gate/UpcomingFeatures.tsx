@@ -49,9 +49,7 @@ export function UpcomingFeatures() {
         );
     }
 
-    return (
-      null
-    );
+    return null;
 }
 
 function FeaturesTable({
