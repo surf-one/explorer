@@ -3,6 +3,7 @@ import './scss/theme-dark.scss';
 import { ClusterModal } from '@components/ClusterModal';
 import { ClusterStatusButton } from '@components/ClusterStatusButton';
 import { MessageBanner } from '@components/MessageBanner';
+import { Navbar } from '@components/Navbar';
 import { ClusterProvider } from '@providers/cluster';
 import { ScrollAnchorProvider } from '@providers/scroll-anchor';
 import { Toaster } from '@shared/ui/sonner/toaster';
@@ -10,7 +11,6 @@ import type { Viewport } from 'next';
 import dynamic from 'next/dynamic';
 import { Rubik } from 'next/font/google';
 import { Metadata } from 'next/types';
-import { Navbar } from './components/Navbar';
 const SearchBar = dynamic(() => import('@components/SearchBar'), {
     ssr: false,
 });
@@ -18,7 +18,7 @@ const SearchBar = dynamic(() => import('@components/SearchBar'), {
 export const metadata: Metadata = {
     description: 'Inspect transactions, accounts, blocks, and more on the Solana blockchain',
     manifest: '/manifest.json',
-    title: 'Explorer | Turboflow',
+    title: 'Explorer | Solana',
 };
 
 export const viewport: Viewport = {
@@ -34,13 +34,7 @@ const rubikFont = Rubik({
     weight: ['300', '400', '700'],
 });
 
-export default function RootLayout({
-    analytics,
-    children,
-}: {
-    analytics?: React.ReactNode;
-    children: React.ReactNode;
-}) {
+export default function RootLayout({ analytics, children }: { analytics: React.ReactNode; children: React.ReactNode }) {
     return (
         <html lang="en" className={`${rubikFont.variable}`}>
             <head>
