@@ -5,7 +5,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { useClusterPath } from '@utils/url';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useSelectedLayoutSegment, useSelectedLayoutSegments } from 'next/navigation';
+// import { useSelectedLayoutSegment, useSelectedLayoutSegments } from 'next/navigation';
 import React, { ReactNode } from 'react';
 
 import { ClusterStatusButton } from './ClusterStatusButton';
@@ -15,14 +15,14 @@ export interface INavbarProps {
 }
 
 export function Navbar({ children }: INavbarProps) {
-    const [navOpened, navHandlers] = useDisclosure(false);
+    const [, navHandlers] = useDisclosure(false);
     const homePath = useClusterPath({ pathname: '/' });
-    const featureGatesPath = useClusterPath({ pathname: '/feature-gates' });
-    const supplyPath = useClusterPath({ pathname: '/supply' });
-    const programsPath = useClusterPath({ pathname: '/verified-programs' });
-    const inspectorPath = useClusterPath({ pathname: '/tx/inspector' });
-    const selectedLayoutSegment = useSelectedLayoutSegment();
-    const selectedLayoutSegments = useSelectedLayoutSegments();
+    // const featureGatesPath = useClusterPath({ pathname: '/feature-gates' });
+    // const supplyPath = useClusterPath({ pathname: '/supply' });
+    // const programsPath = useClusterPath({ pathname: '/verified-programs' });
+    // const inspectorPath = useClusterPath({ pathname: '/tx/inspector' });
+    // const selectedLayoutSegment = useSelectedLayoutSegment();
+    // const selectedLayoutSegments = useSelectedLayoutSegments();
     return (
         <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container px-4">
